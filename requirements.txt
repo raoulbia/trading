@@ -1,0 +1,10 @@
+yfinance
+matplotlib
+pandas
+numpy
+openpyxl
+CurrencyConverter
+forex-python
+seaborn
+fpdf
+img2pdf
