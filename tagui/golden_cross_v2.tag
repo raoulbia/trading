@@ -40,6 +40,7 @@ for j in 1 to 5
     for i from 1 to 19
         click //*[@id="dropdownSector"]/span[2]
         read //*[@id="cphPrimaryContent_pnlFilterTable"]/div[1]/div[2]/div/ul/li[`i`]/label/text() to industry
+        print `industry`
         if i equals to 1    
             click //*[@id="cphPrimaryContent_pnlFilterTable"]/div[1]/div[2]/div/ul/li[`i`]/label
             click //*[@id="form1"]/div[3]
@@ -47,7 +48,9 @@ for j in 1 to 5
             // uncheck previous selection
             prev = i - 1
             click //*[@id="cphPrimaryContent_pnlFilterTable"]/div[1]/div[2]/div/ul/li[`prev`]/label
+            wait 2
             click //*[@id="cphPrimaryContent_pnlFilterTable"]/div[1]/div[2]/div/ul/li[`i`]/label
+            wait 2
             click //*[@id="form1"]/div[3]
 
         // wait until page fully loaded
@@ -59,7 +62,7 @@ for j in 1 to 5
         // count rows
         rows = count('//*[@id="cphPrimaryContent_pnlFilterTable"]/div[3]/div/table/tbody/tr') 
         if rows > 0
-            echo `rows`
+            print `rows`
             // get data for each row
             for row from 1 to rows
                 if exist('//*[@id="cphPrimaryContent_pnlFilterTable"]/div[3]/div/table/tbody/tr[`row`]/td[1]/a/div[2]')

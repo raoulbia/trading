@@ -1,6 +1,9 @@
 # local data dir
 data/
 
+# tagui
+tagui/*_error.png
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
